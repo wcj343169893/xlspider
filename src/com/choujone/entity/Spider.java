@@ -1,6 +1,7 @@
 package com.choujone.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +17,7 @@ import javax.persistence.TemporalType;
  * 功能描述： 2012-2-11
  */
 @Entity
-@Table(name="person")
+@Table(name="spider")
 public class Spider implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -50,10 +51,10 @@ public class Spider implements Serializable {
 	private int start = 0;
 	// 创建时间
 	@Temporal(TemporalType.DATE)
-	private String sdTime = "";
+	private Date sdTime ;
 	// 最后修改时间
 	@Temporal(TemporalType.DATE)
-	private String edTime = "";
+	private Date edTime ;
 	// 是否显示
 	private int isVisible = 0;
 
@@ -189,19 +190,20 @@ public class Spider implements Serializable {
 		this.start = start;
 	}
 
-	public String getSdTime() {
+
+	public Date getSdTime() {
 		return sdTime;
 	}
 
-	public void setSdTime(String sdTime) {
+	public void setSdTime(Date sdTime) {
 		this.sdTime = sdTime;
 	}
 
-	public String getEdTime() {
+	public Date getEdTime() {
 		return edTime;
 	}
 
-	public void setEdTime(String edTime) {
+	public void setEdTime(Date edTime) {
 		this.edTime = edTime;
 	}
 
